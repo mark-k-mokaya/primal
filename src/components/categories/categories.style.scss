@@ -1,0 +1,8 @@
+.categories-section{
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}

@@ -1,0 +1,32 @@
+.category-item{
+    min-width: 28%;
+    height: 100%;
+    text-align: center;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    transition: all 0.4s;
+    box-shadow: 0 0 5px #000;
+
+    h2{
+        background-color: rgba(0,0,0,1);
+        color: #fff;
+        margin-top: 50%;
+        margin-bottom: 0;
+        padding: 30px;
+    }
+
+    p{
+        margin: 20px;
+        padding: 10px;
+        background-color: black;
+        color: #fff;
+    }
+}
+
+.category-item:hover{
+    transform: scale(1.01);   
+}
