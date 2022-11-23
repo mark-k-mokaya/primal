@@ -1,7 +1,8 @@
 import {initializeApp} from 'firebase/app';
-import {getAuth, signInWithRedirect, signInWithPopup, getRedirectResult, GoogleAuthProvider, createUserWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {getFirestore, doc, getDoc, setDoc, Firestore} from 'firebase/firestore';
-import {useEffect} from 'react';
+// import {signInWithRedirect, getRedirectResult} from 'firebase/auth';
+// import {useEffect} from 'react';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -49,11 +50,15 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo={})=>{
       console.log("Unexpected error occured: " + error.message);
     }
   }
-  
   return userDocRef;
 }
 
 export const createAuthUserWithEmailAndPassword = async (email, password)=>{
   if(!email || ! password) return;
   return await createUserWithEmailAndPassword(auth, email, password);
+}
+
+export const signInAuthUserWithEmailAndPassword = async (email, password)=>{
+  if(!email || ! password) return;
+  return await signInWithEmailAndPassword(auth, email, password);
 }

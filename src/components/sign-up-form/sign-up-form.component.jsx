@@ -33,8 +33,6 @@ function SignUpForm(){
             // Authenticate them with email and password
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
 
-            user.displayName = displayName;
-
             // create a user document
             const userRef = await createUserDocumentFromAuth(user, {displayName});
 
@@ -68,7 +66,7 @@ function SignUpForm(){
                 <FormInput label="Confirm Password" type="password" required onChange={handleChange} name="confirmPassword" value={confirmPassword}/>
 
                 <Button type="submit">Sign Up</Button>
-        </form>
+            </form>
         </div>
     );
 }
