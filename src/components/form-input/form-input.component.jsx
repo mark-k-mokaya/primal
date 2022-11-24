@@ -1,4 +1,4 @@
-import '../form-input/form-input.styles.scss'
+import './form-input.styles.scss'
 
 function FormInput({label, ...otherProps}){
     return(

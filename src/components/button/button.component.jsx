@@ -1,4 +1,4 @@
-import "../button/button.styles.scss";
+import "./button.styles.scss";
 
 function Button({children, buttonType, ...otherProps}){
     // 3 types: inverted, default, google-sign-in

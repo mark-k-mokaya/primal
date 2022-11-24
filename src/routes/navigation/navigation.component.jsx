@@ -1,13 +1,17 @@
 import { Fragment, useContext} from "react";
 import { Outlet, Link  } from "react-router-dom";
 import PrimalLogo from "../../assets/Logo.png";
-import "../navigation/navigation.styles.scss"
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import {signOutUser} from "../../utils/firebase/firebase.utils";
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
+import "../navigation/navigation.styles.scss";
 
 function Navigation(){
-
   const {currentUser} = useContext(UserContext);
+  const {isCartOpen} = useContext(CartContext);
+
     return(
       <Fragment>
         <div className="navigation">
@@ -16,6 +20,7 @@ function Navigation(){
               <img src={PrimalLogo} alt="Primal Logo" className="logo"/>
             </Link>
             </div>
+
             <div className="nav-links-container">
                 <Link className="nav-link" to="shop">Shop</Link>
                 {
@@ -29,8 +34,11 @@ function Navigation(){
                     </Link> 
                   )
                 }
-                
+              <CartIcon/>
             </div>
+
+            {isCartOpen && <CartDropdown/>}
+            
         </div>
         <Outlet />
       </Fragment>
