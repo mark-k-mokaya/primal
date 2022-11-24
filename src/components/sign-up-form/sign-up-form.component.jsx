@@ -61,7 +61,7 @@ function SignUpForm(){
 
                 <FormInput label="Email" type="email" required onChange={handleChange} name="email" value={email}/>
 
-                <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password}/>
+                <FormInput label="Password" autoComplete="new-password" type="password" required onChange={handleChange} name="password" value={password}/>
 
                 <FormInput label="Confirm Password" type="password" required onChange={handleChange} name="confirmPassword" value={confirmPassword}/>
 
