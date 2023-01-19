@@ -7,13 +7,13 @@ import Category from '../category/category.component';
 import {useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import {getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import {fetchCategoriesAsync} from "../../store/categories/category.action";
+import {fetchCategoriesStart} from "../../store/categories/category.action";
 
 function Shop() { 
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(fetchCategoriesAsync);
+        dispatch(fetchCategoriesStart());
     }, []);
 
     return(
